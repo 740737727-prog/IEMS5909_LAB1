@@ -17,7 +17,7 @@ token_stats = defaultdict(int)
 all_ttft = []
 # 记录测试开始时间（作为时间轴的0点）
 test_start_time = None
-# 控制采样线程的开关
+# 控制采样线程的开关（全局变量）
 sampling_running = True
 
 def send_request(request_id):
@@ -134,7 +134,7 @@ def main():
         print(f"Min TTFT: {min(all_ttft):.2f} ms | Max TTFT: {max(all_ttft):.2f} ms")
     
     # 计算总token和总耗时
-    total_tokens = sum(token_stats.values()) + sum(v for k, v in token_stats.items())
+    total_tokens = sum(token_stats.values())
     total_time = time.time() - test_start_time
     overall_throughput = total_tokens / total_time if total_time > 0 else 0
     print(f"Total Generated Tokens: {total_tokens}")
@@ -145,7 +145,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        global sampling_running
+        # 直接修改全局变量，无需重复声明global
         sampling_running = False
         print("\nTest interrupted by user")
         sys.exit(0)
