@@ -16,7 +16,7 @@ model = Qwen3ASRModel.from_pretrained(
 )
 
 results = model.transcribe(
-    audio="resources/asr_en.wav",
+    audio="my_video.wav",
     language=None, # set "English" to force the language
 )
 
