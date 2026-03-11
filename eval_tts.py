@@ -25,11 +25,11 @@ ref_audio = "my_video.wav"
 ref_text  = "Wealth, fame, power, the man who had acquired everything in the world, the parrot king gold Roger, the final words that were said at his execution, sent the people to the seas"
 
 wavs, sr = model.generate_voice_clone(
-    text="To be, or not to be, that is the question:
+    text="""To be, or not to be, that is the question:
 Whether 'tis nobler in the mind to suffer
 The slings and arrows of outrageous fortune,
 Or to take Arms against a Sea of troubles,
-And by opposing end them: to die, to sleep",
+And by opposing end them: to die, to sleep"""
     language="English",
     ref_audio=ref_audio,
     ref_text=ref_text,
