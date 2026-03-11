@@ -16,16 +16,20 @@ print(f"Using dtype: {dtype}")
 # )
 
 model = Qwen3TTSModel.from_pretrained(
-    "Qwen3-TTS-12Hz-0.6B-Base",
+    "opt/models/Qwen3-TTS-12Hz-0.6B-Base",
     dtype=dtype,
     device_map=device
 )
 
-ref_audio = "resources/clone.wav"
-ref_text  = "When someone comes up and says something like, I am a God, everybody says, who does he think he is? I just told you who I thought I was. A God! I just told you, that's who I think I am."
+ref_audio = "my_clone.wav"
+ref_text  = "Wealth, fame, power, the man who had acquired everything in the world, the parrot king gold Roger, the final words that were said at his execution, sent the people to the seas"
 
 wavs, sr = model.generate_voice_clone(
-    text="I lost the only girl in the world that know me best. I got the money and the fame, man, that don't mean shit. I got the Jesus on the chain, man, that don't mean shit. Cause when the Jesus pieces can't bring me peace",
+    text="To be, or not to be, that is the question:
+Whether 'tis nobler in the mind to suffer
+The slings and arrows of outrageous fortune,
+Or to take Arms against a Sea of troubles,
+And by opposing end them: to die, to sleep",
     language="English",
     ref_audio=ref_audio,
     ref_text=ref_text,
