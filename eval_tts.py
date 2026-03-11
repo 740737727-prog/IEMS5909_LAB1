@@ -16,7 +16,7 @@ print(f"Using dtype: {dtype}")
 # )
 
 model = Qwen3TTSModel.from_pretrained(
-    "opt/models/Qwen3-TTS-12Hz-0.6B-Base",
+    "/opt/models/Qwen3-TTS-12Hz-0.6B-Base",
     dtype=dtype,
     device_map=device
 )
