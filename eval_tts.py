@@ -21,7 +21,7 @@ model = Qwen3TTSModel.from_pretrained(
     device_map=device
 )
 
-ref_audio = "my_clone.wav"
+ref_audio = "my_video.wav"
 ref_text  = "Wealth, fame, power, the man who had acquired everything in the world, the parrot king gold Roger, the final words that were said at his execution, sent the people to the seas"
 
 wavs, sr = model.generate_voice_clone(
