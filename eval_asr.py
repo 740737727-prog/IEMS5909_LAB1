@@ -8,7 +8,7 @@ print(f"Using device: {device}")
 print(f"Using dtype: {dtype}")
 
 model = Qwen3ASRModel.from_pretrained(
-    "Qwen3-ASR-0.6B",
+    "/opt/models/Qwen3-ASR-0.6B",
     dtype=dtype,
     device_map=device,
     max_inference_batch_size=4,
