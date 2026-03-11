@@ -29,7 +29,7 @@ wavs, sr = model.generate_voice_clone(
 Whether 'tis nobler in the mind to suffer
 The slings and arrows of outrageous fortune,
 Or to take Arms against a Sea of troubles,
-And by opposing end them: to die, to sleep"""
+And by opposing end them: to die, to sleep""",
     language="English",
     ref_audio=ref_audio,
     ref_text=ref_text,
